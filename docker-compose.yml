@@ -1,0 +1,29 @@
+version: "3.5"
+
+services:
+  covid19:
+    image: postgres
+    environment:
+      POSTGRES_DB: covid19
+      POSTGRES_USER: covid19
+      POSTGRES_PASSWORD: "covid19"
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres-compose-network
+
+  pgadmin-covid19:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "covid19@covid19.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "covid19"
+    ports:
+      - "5433:80"
+    depends_on:
+      - covid19
+    networks:
+      - postgres-compose-network
+
+networks:
+  postgres-compose-network:
+    driver: bridge

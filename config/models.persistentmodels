@@ -1,0 +1,48 @@
+-- By default this file is used by `persistFileWith` in Model.hs (which is imported by Foundation.hs)
+-- Syntax for this file here: https://github.com/yesodweb/persistent/blob/master/docs/Persistent-entity-syntax.md
+
+Hospitals json
+    cnes Int
+    ibge Int
+    name Text
+    type Text
+    management Text
+    address Text
+    number Text
+    neighbourhood Text
+    zipcode Text
+    state Text
+    city Text
+    phone Text
+    lat Double
+    long Double
+    deriving Eq
+    deriving Show
+States json
+    code Text
+    name Text
+    UniqueState code
+    deriving Eq
+    deriving Show
+Cities json
+    name Text
+    state StatesId
+    deriving Eq
+    deriving Show
+HospitalsInfo json
+    cnes Int
+    ibge Int
+    name Text
+    type Text
+    management Text
+    address Text
+    number Text
+    neighbourhood Text
+    zipcode Text
+    state StatesId
+    city CitiesId
+    phone Text
+    lat Double
+    long Double
+    deriving Eq
+    deriving Show
