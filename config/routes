@@ -10,3 +10,4 @@
 /states StatesR GET
 /states/#StatesId/cities CitiesR GET
 /states/#StatesId/cities/#CitiesId/hospitals HospitalsR GET
+/states/#StatesId/cities/#CitiesId/hospitals/#HospitalsId/rooms RoomsR GET
